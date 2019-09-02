@@ -1,3 +1,17 @@
 language: java
 jdk: oraclejdk8
 dist: trusty
+
+env:
+  global:
+    secure: NDtTkubA/d2cMTQkm9nFEwyIR6ayCfP80IqXphoE1NO4H7ozVnnJshFhOaD/JuFYBGOaG2TZOz7QcMO0Hfcds/2tvkq7F8BzLDrIIbrUSdULQc7/5Wf69DUDh5s3PwLdsoZCdHLMwiGkLPXkuh9uPbdYtT7Y4rr2/ox42X7q9RT8MGUJ1CPMyOuY18wfF2uPNQeGG2fEnOHiuJSez0eV6Tu32Ia5o7r563I8I/1zPGHOegI5g/E+RVYpInFrfbKo7GC0JPAJsH9eeNlf2sZZ7wmZYI+WdufxQ6peGP/M7DJXKc4rWHEmmVqINVOTtnR55eXYBMd5+VOSRHEF2G28S+/x8/9lbjvL6o+h8h8A3HRewlFTSUI2VGSFJe1vASVll626xbBBmlNgarXZIBTow7XzNvt+Q68uhhtX41shqPpCRzvH3TdEyxFkeegSpxOUukWI0mP5kSAqqfxQGEI7y2CkxAlNmCIt5rXI9I2Sk5K/ANB66V/quRZeKU57TR04YMCFpHtdSdhWWQflq/2dn7gGpsvHCHTL30TgsU/ERhQKjWHSqW+TlCrqcHUyv3/dr6Iebwk6WaZX+4s8aOrK+1Yz9WyQsC2RLGyfK914U+MKcffGcXGnz+1mObDhvhTsTEWW01aGsHkQRUaynHWNkftZ2cI7vw9C0P8O4u1gMQE=
+addons:
+  sonarcloud:
+    organization: "hydroblok"
+    token:
+      secure: $SONAR_TOKEN
+
+script:
+  - ./mvnw clean install -B
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
