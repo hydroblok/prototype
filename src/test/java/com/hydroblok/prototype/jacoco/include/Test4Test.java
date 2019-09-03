@@ -13,10 +13,10 @@ import static org.junit.Assert.assertTrue;
 public class Test4Test {
 
     @Autowired
-    private Test3 test3;
+    private Test4 test4;
 
     @Test
-    public void test1() {
-        assertTrue("test4".equals(test3.test()));
+    public void test4() {
+        assertTrue("test4".equals(test4.test()));
     }
 }
