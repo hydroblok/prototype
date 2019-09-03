@@ -48,8 +48,8 @@
                 <version>0.7.9</version>
                 <configuration>
                     <excludes>
-                        <exclude>com/hydroblok/prototype/jacoco/exclude/*</exclude>
-                        <exclude>com/hydroblok/prototype/*Application</exclude>
+                        <exclude>com/hydroblok/prototype/jacoco/exclude/*.java</exclude>
+                        <exclude>com/hydroblok/prototype/*Application.java</exclude>
                     </excludes>
                 </configuration>
                 <executions>
