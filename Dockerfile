@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk-alpine
-ADD "target/prototype.jar" "app.jar"
+ADD "target/prototype-0.0.1-SNAPSHOT.jar" "app.jar"
 EXPOSE 8080
 EXPOSE 8787
 RUN sh -c 'touch /app.jar'
